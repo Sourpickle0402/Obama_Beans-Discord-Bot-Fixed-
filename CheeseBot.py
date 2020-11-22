@@ -34,8 +34,8 @@ async def cheesefact(message):
     MessageLocation = message.channel.id
     channel = client.get_channel(MessageLocation)
     await channel.send('Here is a random cheese fact:')
-    RNGFACT = random.randint(0, 4)
-    await channel.send(CheeseFacts[RNGFACT])
+    RNGFACT = random.choice(CheeseFacts)
+    await channel.send(RNGFACT)
 
 @client.command() #I'm putting this command here to inform the users what commands are available to them
 async def commands(message):
@@ -48,8 +48,8 @@ async def rollthecheese(message):
     MessageLocation = message.channel.id
     channel = client.get_channel(MessageLocation)
     await channel.send('You are about to roll the cheese')
-    RNG = random.randint(0, 4)
-    await channel.send(file=Cheeses[RNG])
+    RNG = random.choice(Cheeses)
+    await channel.send(file=RNG)
 
 @client.command()
 async def whatischeese(message):
