@@ -28,6 +28,7 @@ async def on_ready():
 async def on_message(message):
     if "https://discord.gg/" in message.content:
         await message.delete()
+    await client.process_commands(message)
 
 @client.command()
 async def cheesefact(message):
